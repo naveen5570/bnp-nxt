@@ -1,0 +1,16 @@
+#canvas {background:#fff; border:1px solid #999;}
+	.canva-top{margin-top:80px;}
+	header {width:100%; top:0; left:0; position: fixed; z-index: 999}
+	.left_icons {background:#f7f9fc; border-right:2px solid #ddd;}
+	.canvas_main {background:#f7f9fc; text-align: center; padding-top: 50px;}
+	.text, .img, .text1, .shape, .clipart {display:none; position: fixed; width:300px; background:#fff; z-index:999; border-radius: 5px; border:1px solid #ddd; height:100%; left:110px; top:80px;}
+	.text1 {display:block;}
+	.canvas-container { margin: 0 auto 0 300px;}
+	.click_text, .click_img, .click_template, .click_shape, .click_clipart, .circle, .rectangle, .triangle, .polygon {cursor:pointer}
+	.text span, .img span, .text1 span {position:absolute; top:-2px; right:4px; font-size:20px; cursor:pointer; font-weight: 600;}
+	#sku,#sku2 {display:none; position:fixed; width:300px; background:#fff; padding:10px; top:40%; left:40%; z-index: 1000;}
+	.overlay {display:none; z-index: 999; opacity:0.5; position: fixed; background:#000; top:0; left:0; width:100vw; height:100vh;}
+	.shape span.close, .clipart span.close {position:absolute; top:-18px;  right:0px; z-index: 999; font-size:20px; cursor:pointer; font-weight: 600;}
+.shape span img {width:100%; max-width:80px; height:80px; margin:10px 4px; border:1px solid #ddd;}
+.clipart span img {width:100%; max-width:60px; height:80px; margin:10px 4px; border:1px solid #ddd;}
+.shape {display:none;}
