@@ -31,17 +31,17 @@ const Home = () => {
             <button className="add-text-btn btn btn-info">Add Text</button>
             {/*<button class="save-btn btn btn-success">Save</button>*/}
           </div>
-          <div class="form-group pop_option shape">
-<span class="close">x</span>
-<span class="rectangle"><img src="img/rectangle.png"/></span>
-<span class="circle"><img src="img/circle.png"/></span>
-<span class="triangle"><img src="img/triangle.png"/></span>
-<span class="polygon"><img src="img/polygon.png"/></span>
+          <div className="form-group pop_option shape">
+<span className="close">x</span>
+<span className="rectangle"><img src="img/rectangle.png"/></span>
+<span className="circle"><img src="img/circle.png"/></span>
+<span className="triangle"><img src="img/triangle.png"/></span>
+<span className="polygon"><img src="img/polygon.png"/></span>
 
 </div>	
-<div class="form-group pop_option clipart">
-<span class="close">x</span>
-<span class="img1 clipart_img"><img src="http://fabricjs.com/assets/pug_small.jpg"/></span>
+<div className="form-group pop_option clipart">
+<span className="close">x</span>
+<span className="img1 clipart_img"><img src="http://fabricjs.com/assets/pug_small.jpg"/></span>
 </div>
           <div className="form-group pop_option img">
             <span className="close">x</span>
@@ -60,10 +60,10 @@ const Home = () => {
             <span>
               <img src="img/background.jpg" />
             </span>
-            <span class="click_shape">
+            <span className="click_shape">
               <img src="img/shapes.jpg" />
             </span>
-            <span class="click_clipart1">
+            <span className="click_clipart1">
               <img src="img/clipart.jpg" />
             </span>
             <span className="click_img">
