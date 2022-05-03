@@ -46,24 +46,47 @@ document.querySelectorAll('.add-text-btn')[0].addEventListener('click', function
 delBtn.addEventListener('click', e => {
   canvas.remove(canvas.getActiveObject())
 });
-	var gridsize = 5;
+	/*var gridsize = 5;
 for(var x=1;x<(canvas.width/gridsize);x++)
                         {
                             canvas.add(new fabric.Line([20*x, 0, 20*x, 1000],{ stroke: "#ddd", strokeWidth: 1, selectable:false, strokeDashArray: [5, 5]}));
                             canvas.add(new fabric.Line([0, 40*x, 1000, 40*x],{ stroke: "#ddd", strokeWidth: 1, selectable:false, strokeDashArray: [5, 5]}));
-                    }	
+                    }
+					*/
 $('#size').change(function(){
 if($('#size').val()=='size1')
 {
 canvas.setDimensions({width:500, height:300});
+fabric.Image.fromURL(imageUrl, function (img) {    
+    canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
+        scaleX: canvas.width / img.width,
+        scaleY: canvas.height / img.height
+    });
+
+});
+
 }
 else if($('#size').val()=='size2')
 {
 canvas.setDimensions({width:300, height:500});
+fabric.Image.fromURL(imageUrl, function (img) {    
+    canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
+        scaleX: canvas.width / img.width,
+        scaleY: canvas.height / img.height
+    });
+
+});
 }
 else if($('#size').val()=='size3')
 {
 canvas.setDimensions({width:300, height:600});
+fabric.Image.fromURL(imageUrl, function (img) {    
+    canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
+        scaleX: canvas.width / img.width,
+        scaleY: canvas.height / img.height
+    });
+
+});
 }
 }); 
 	
@@ -115,28 +138,34 @@ canvas.setDimensions({width:300, height:600});
     }
  });
 $('.click_text').click(function(){
-    $('.pop_option').hide();
-    $('.text').toggle();
+$('.pop_option').hide();
+$('.text').toggle();
 });
+
 $('.click_template').click(function(){
-    $('.pop_option').hide();
-    $('.text1').toggle();
+$('.pop_option').hide();
+$('.text1').toggle();
 });
 $('.click_img').click(function(){
-    $('.pop_option').hide();
-    $('.img').toggle();
-});
-$('.close').click(function(){
-    $('.pop_option').hide();
+$('.pop_option').hide();
+$('.img').toggle();
 });
 $('.click_shape').click(function(){
-    $('.pop_option').hide();
-    $('.shape').toggle();
-    });
-    $('.click_clipart').click(function(){
-    $('.pop_option').hide();
-    $('.clipart').toggle();
-    });	
+$('.pop_option').hide();
+$('.shape').toggle();
+});
+$('.click_clipart').click(function(){
+$('.pop_option').hide();
+$('.clipart').toggle();
+});
+$('.click_bg').click(function(){
+$('.pop_option').hide();
+$('.background').toggle();
+});
+
+$('.close').click(function(){
+$('.pop_option').hide();
+});
 $('.save').click(function(){
 $('#sku, .overlay').show();
 });
@@ -250,85 +279,104 @@ $('.restore1').click(function(){
 
 
     $('.rectangle').click(function(){
-        // Initiate a Rect instance
-                var rectangle = new fabric.Rect({
-                    width: 100,
-                    height: 100,
-                    fill: '#ddd',
-                    
-                });
-          
-                // Render the Rect in canvas
-                canvas.add(rectangle);
-            canvas.centerObject(rectangle);
-        });
-        
-        $('.circle').click(function(){
-        var circle = new fabric.Circle({
-                    radius: 50,
-                    
-                    fill: '#ddd',
-                });
-          
-                // Render the circle in canvas
-                canvas.add(circle);	
-            canvas.centerObject(circle);
-        });
-        
-        
-        $('.triangle').click(function(){
-        // Initiate a triangle instance
-                var triangle = new fabric.Triangle({
-                                width: 150,
-                                height: 100,
-                                fill: '#ddd',
-                                
-                });
-         
-                // Render the triangle in canvas
-                canvas.add(triangle);
-                canvas.centerObject(triangle);	
-        });
-        
-        
-        $('.polygon').click(function(){
-        // Initiate a polygon instance
-                var polygon = new fabric.Polygon([
-                {x: 200, y: 0},
-          {x: 250, y: 50},
-          {x: 250, y: 100},
-          {x: 150, y: 100},
-          {x: 150, y: 50} ], {
-                    fill: '#ddd'
-                });
-          
-                // Render the polygon in canvas
-                canvas.add(polygon);
-                canvas.centerObject(polygon);	
-        });
-        
-        $('.img1').click(function(){
-        //var oImg = img.set({left: 70,  top: 100, width: img.width, height: img.height, angle: 0}).scale(0.15);
-        fabric.Image.fromURL('http://fabricjs.com/assets/pug_small.jpg', function(myImg) {
-        var img1 = myImg.set({ left: 0, top: 0,width: myImg.width, height: myImg.height, angle: 0}).scale(0.15);
-        canvas.add(img1);
-        canvas.centerObject(img1);	
-        });     
-        });
-        
-        
-        
-        $('.rect_color').click(function(){
-        var activeObject = canvas.getActiveObject();
+// Initiate a Rect instance
+        var rectangle = new fabric.Rect({
+            width: 100,
+            height: 100,
+            fill: '#ddd',
             
-                activeObject.fill = '#000';
-                canvas.renderAll();	
         });
-        
-        
-        $('#color').change(function(){
-        //alert(canvas);
-        canvas.getActiveObject().set("fill", this.value);
+  
+        // Render the Rect in canvas
+        canvas.add(rectangle);
+	canvas.centerObject(rectangle);
+});
+
+$('.circle').click(function(){
+var circle = new fabric.Circle({
+            radius: 50,
+            fill: '#ddd',
+        });
+  
+        // Render the circle in canvas
+        canvas.add(circle);	
+	canvas.centerObject(circle);
+});
+
+
+$('.triangle').click(function(){
+// Initiate a triangle instance
+        var triangle = new fabric.Triangle({
+                        width: 150,
+                        height: 100,
+                        fill: '#ddd',
+                        
+        });
+ 
+        // Render the triangle in canvas
+        canvas.add(triangle);
+        canvas.centerObject(triangle);	
+});
+
+
+$('.polygon').click(function(){
+// Initiate a polygon instance
+        var polygon = new fabric.Polygon([
+        {x: 200, y: 0},
+  {x: 250, y: 50},
+  {x: 250, y: 100},
+  {x: 150, y: 100},
+  {x: 150, y: 50} ], {
+            fill: '#ddd'
+        });
+  
+        // Render the polygon in canvas
+        canvas.add(polygon);
+        canvas.centerObject(polygon);	
+});
+
+$('.img1').click(function(){
+var img_canvas = $(this).find("img").attr('src');
+//alert(img_canvas);
+//var oImg = img.set({left: 70,  top: 100, width: img.width, height: img.height, angle: 0}).scale(0.15);
+fabric.Image.fromURL(img_canvas, function(myImg) {
+var img1 = myImg.set({ left: 0, top: 0,width: myImg.width, height: myImg.height, angle: 0}).scale(0.15);
+canvas.add(img1);
+canvas.centerObject(img1);	
+});     
+});
+
+
+
+$('.rect_color').click(function(){
+var activeObject = canvas.getActiveObject();
+	
+        activeObject.fill = '#000';
         canvas.renderAll();	
-        });
-    
+});
+
+
+$('#color').change(function(){
+//alert(canvas);
+canvas.getActiveObject().set("fill", this.value);
+canvas.renderAll();	
+});
+
+
+
+var imageUrl;
+
+// Set Bg of Canvas
+$('.bg_img').click(function(){
+imageUrl = $(this).find("img").attr('src');
+var imgg = $(this).find('img');
+fabric.Image.fromURL(imageUrl, function (img) {    
+    canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
+        scaleX: canvas.width / img.width,
+        scaleY: canvas.height / img.height
+    });
+
+});
+console.log(imageUrl);
+});
+
