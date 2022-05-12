@@ -198,38 +198,30 @@ var sku = $('#sku1').val();
 
 // Create Product 
 
-$('.create').click(function(){
+$('.create1').click(function(){
     //alert($('#sku1').val());
-    var sku = 'sku123';
-    var name = 'Product_90';
-    var price = "45";
-    var weight="4";
-    var type="physical";
-    var url = "https://api.bigcommerce.com/stores/o003r2bvgp/v3/catalog/products";
+
+    
+    var sku = $('#pr_sku').val();
+    var name = $('#pr_name').val();
+    var price = $('#pr_price').val();
+    var weight = $('#pr_weight').val();
+    var type = $('#pr_type').val();
+    var url = "http://localhost:3000/api/create";
         var SendInfo= { name:name, sku:sku, price:price, weight:weight, type:type};
         //alert(JSON.stringify(SendInfo));
         
         $.ajax({
             type: "POST",
-            method:"POST",
-            url: url,
-            mode: 'cors',
             
-            headers: {
-                
-                'X-Auth-Token':'buvkvdapxcl8qbikw38hfmbyoj46jux',
-                'Authorization': 'buvkvdapxcl8qbikw38hfmbyoj46jux',
-                'content-type': 'application/json',
-                'accept': 'application/json',
-                'x-auth-client': 'buvkvdapxcl8qbikw38hfmbyoj46jux',
-                'Access-Control-Allow-Origin': 'https://nxt-bnp.herokuapp.com/'
-            },
-            crossDomain: true,
-        
+            url: url,
+             
+            
+            
             data: SendInfo,
             success: function(data) { alert("Product Created Successfully"); 
-            $('#sku,.overlay').hide();
-        
+            $('#create_product,.overlay').hide();
+        console.log(data);
         },
             error: function(xhr, status, error) {
                 alert(JSON.stringify(xhr));
@@ -253,6 +245,9 @@ canvas.clear();
 $('.restore').click(function(){
 $('#sku2, .overlay').show();
 });
+$('.create').click(function(){
+    $('#create_product, .overlay').show();
+    });
 $('.restore1').click(function(){
     //alert(JSON.stringify(json));
     //json = canvas.toJSON();
@@ -378,5 +373,13 @@ fabric.Image.fromURL(imageUrl, function (img) {
 
 });
 console.log(imageUrl);
+});
+
+$(document).mouseup(function (e) {
+    var popup = $(".popup");
+    if (!$('#create').is(e.target) && !popup.is(e.target) && popup.has(e.target).length == 0) {
+        popup.hide();
+        $('.overlay').hide();
+    }
 });
 

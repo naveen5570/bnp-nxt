@@ -1,4 +1,5 @@
 import Script from "next/script"
+//const express = require('express');
 
 const Home = () => {
   return (
@@ -43,6 +44,11 @@ const Home = () => {
 <span className="close">x</span>
 <span className="img1 clipart_img"><img src="http://fabricjs.com/assets/pug_small.jpg"/></span>
 </div>
+<div className="form-group pop_option background">
+<span className="close">x</span>
+<span className="bg_img"><img src="http://fabricjs.com/assets/pug_small.jpg"/></span>
+<span className="bg_img"><img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg"/></span>
+</div>
           <div className="form-group pop_option img">
             <span className="close">x</span>
             <label htmlFor="exampleInputEmail1">Upload Image to Canvas</label>
@@ -57,13 +63,11 @@ const Home = () => {
             <span className="click_text">
               <img src="img/text.jpg" />
             </span>
-            <span>
-              <img src="img/background.jpg" />
-            </span>
+            <span className="click_bg"><img src="img/background.jpg"/></span>
             <span className="click_shape">
               <img src="img/shapes.jpg" />
             </span>
-            <span className="click_clipart1">
+            <span className="click_clipart">
               <img src="img/clipart.jpg" />
             </span>
             <span className="click_img">
@@ -115,7 +119,7 @@ const Home = () => {
             <img src="img/price.png" />
             <br />
             <br />
-            <div id="sku">
+            <div id="sku" className="popup">
               <input
                 type="text"
                 id="sku1"
@@ -127,7 +131,48 @@ const Home = () => {
                 Save Canvas
               </button>
             </div>
-            <div id="sku2">
+            <div id="create_product" className="popup">
+              <input
+                type="text"
+                id="pr_name"
+                placeholder="Product Name"
+                className="form-control"
+              />
+              <br />
+              <input
+                type="text"
+                id="pr_sku"
+                placeholder="Product SKU"
+                className="form-control"
+              />
+              <br/>
+              <input
+                type="number"
+                id="pr_price"
+                 
+                className="form-control" 
+              />
+              <br />
+              <input
+                type="hidden"
+                id="pr_weight"
+                 value="4"
+                className="form-control" disabled
+              />
+              <br/>
+              <input
+                type="hidden"
+                id="pr_type"
+                 value="physical"
+                className="form-control" disabled
+              />
+              
+              
+              <button className="save-btn btn btn-success create1">
+                Create Product  
+              </button>
+            </div>
+            <div id="sku2" className="popup">
               <input
                 type="text"
                 id="sku11"
