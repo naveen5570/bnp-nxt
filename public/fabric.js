@@ -215,9 +215,6 @@ $('.create1').click(function(){
             type: "POST",
             
             url: url,
-             
-            
-            
             data: SendInfo,
             success: function(data) { alert("Product Created Successfully"); 
             $('#create_product,.overlay').hide();
