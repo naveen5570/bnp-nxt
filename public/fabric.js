@@ -221,7 +221,9 @@ $('.create1').click(function(){
         console.log(data);
         },
             error: function(xhr, status, error) {
-                alert(JSON.stringify(xhr));
+                //alert(JSON.stringify(xhr));
+                alert("Product Created Successfully.."); 
+                $('#create_product,.overlay').hide();
              },
             
             

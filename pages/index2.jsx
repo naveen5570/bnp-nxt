@@ -14,7 +14,7 @@ const Home = () => {
         crossOrigin="anonymous"
       />
       <link rel="stylesheet" type="text/css" href="style.css" />
-      <div className="container-fluid header-container">
+      <div className="container-fluid">
         <header>
           <img src="img/header.png" width="100%" />
         </header>
@@ -73,7 +73,7 @@ const Home = () => {
             <span className="click_img">
               <img src="img/uploads.jpg" />
             </span>
-            {/* <span>
+            <span>
               <img src="img/design-comments.jpg" />
             </span>
             <span>
@@ -82,9 +82,8 @@ const Home = () => {
             <span>
               <img src="img/layers.jpg" />
             </span>
-  */}
           </div>
-          <div className="col-md-11 canvas_main">
+          <div className="col-md-8 canvas_main">
             <canvas id="canvas" width={500} height={300} />
             <a href="" id="txt" target="_blank" />
             <br />
@@ -93,10 +92,7 @@ const Home = () => {
               <img src="img/zoom.png" />
             </div>
           </div>
-          <div className="right_section">
-          <div className="row">
-          <div className="col-md-12">
-            
+          <div className="col-md-3">
             <div className="form-group">
               <label htmlFor="Size">Size</label>
               <br />
@@ -110,32 +106,19 @@ const Home = () => {
                 <option value="size2">inch</option>
               </select>
             </div>
-            
-            
-            </div>
-            <div className="col-md-12 color" >
-<div className="form-group">
-<label>Choose Color</label><br/>
-<select  name="color" id="color">
-<option value=""></option>
-<option value="green">GREEN</option>
-<option value="red">RED</option>
-<option value="white">White</option>
-</select>
-</div>
-	</div>
-            </div>
-            </div>
-            <div className="fixed_section">
-<div className="container">
-<div className="row">
-
-<div className="col-md-2"><button className="save-btn btn btn-info save">Save</button></div>
-<div className="col-md-2"><button className="save-btn btn btn-info create">Create</button></div>
-<div className="col-md-3"><button className="save-btn btn btn-info restore">Restore</button></div>
-<div className="col-md-2">
-<input type="button" id="delete" className="save-btn btn btn-danger" value="Delete selection"/>
-</div></div></div>            
+            <div className="form-group"></div>
+            <br />
+            <input
+              type="button"
+              id="delete"
+              className="save-btn btn btn-danger"
+              defaultValue="Delete selection"
+            />
+            <br />
+            <br />
+            <img src="img/price.png" />
+            <br />
+            <br />
             <div id="sku" className="popup">
               <input
                 type="text"
@@ -202,7 +185,12 @@ const Home = () => {
                 Restore Canvas
               </button>
             </div>
-            
+            <button className="save-btn btn btn-success save">Save</button>
+            <button className="save-btn btn btn-success create">Create</button>
+            &nbsp;
+            <button className="save-btn btn btn-success restore">
+              Restore
+            </button>
           </div>
         </div>
       </div>
