@@ -207,7 +207,7 @@ $('.create1').click(function(){
     var price = $('#pr_price').val();
     var weight = $('#pr_weight').val();
     var type = $('#pr_type').val();
-    var url = "http://localhost:3000/api/create";
+    var url = "https://next-bnp.herokuapp.com/api/create";
         var SendInfo= { name:name, sku:sku, price:price, weight:weight, type:type};
         //alert(JSON.stringify(SendInfo));
         
@@ -251,7 +251,7 @@ $('.restore1').click(function(){
     //alert(JSON.stringify(json));
     //json = canvas.toJSON();
     var sku_val =$('#sku11').val();
-    url = "http://localhost:3000/api/products?name="+sku_val;
+    url = "https://next-bnp.herokuapp.com/api/products?name="+sku_val;
     
     $.ajax({
         type: "GET",
