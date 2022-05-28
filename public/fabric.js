@@ -170,10 +170,10 @@ $('.save').click(function(){
 $('#sku, .overlay').show();
 });
 $('.save1').click(function(){
-//alert($('#sku1').val());
+alert($('#sku1').val());
 var sku = $('#sku1').val();
     json = canvas.toJSON();
-    url = "https://bnp-next.herokuapp.com/api/products";
+    url = "https://next-bnp.herokuapp.com/api/products";
     var string_json = JSON.stringify(json);
     var SendInfo= { canvas: string_json, name:sku, price:'400', mediaUrl:'tt',description:'test'};
     
