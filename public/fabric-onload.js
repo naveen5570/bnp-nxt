@@ -173,7 +173,7 @@ $('.save1').click(function(){
 //alert($('#sku1').val());
 var sku = $('#sku1').val();
     json = canvas.toJSON();
-    url = "https://bnp-next.herokuapp.com/api/products";
+    url = "http://localhost:3000/api/products";
     var string_json = JSON.stringify(json);
     var SendInfo= { canvas: string_json, name:sku, price:'400', mediaUrl:'tt',description:'test'};
     
@@ -247,29 +247,7 @@ $('#sku2, .overlay').show();
 $('.create').click(function(){
     $('#create_product, .overlay').show();
     });
-$('.restore1').click(function(){
-    //alert(JSON.stringify(json));
-    //json = canvas.toJSON();
-    var sku_val =$('#sku11').val();
-    url = "http://localhost:3000/api/products?name="+sku_val;
-    
-    $.ajax({
-        type: "GET",
-        url: url,
-        success: function(data) { //alert("Restored=>"+data[0].canvas);
-        var t = data[0].canvas;
-        //alert(t);
-        canvas.loadFromJSON(t, canvas.renderAll.bind(canvas));
-        $('#sku2, .overlay').hide();
-    },
-        error: function(xhr, status, error) {
-            alert('not working');
-         },
-        
-        
-      });
-    
-    });
+
 
 
     $('.rectangle').click(function(){
@@ -380,5 +358,34 @@ $(document).mouseup(function (e) {
         popup.hide();
         $('.overlay').hide();
     }
+});
+
+$(document).ready(function(){
+    const queryString = window.location.search;
+//console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+//console.log(urlParams.get('name'));
+        //alert(JSON.stringify(json));
+        //json = canvas.toJSON();
+        var sku_val =urlParams.get('name');
+        url = "http://localhost:3000/api/products?name="+sku_val;
+        
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function(data) { //alert("Restored=>"+data[0].canvas);
+            var t = data[0].canvas;
+            //alert(t);
+            canvas.loadFromJSON(t, canvas.renderAll.bind(canvas));
+            $('#sku2, .overlay').hide();
+        },
+            error: function(xhr, status, error) {
+                alert('not working');
+             },
+            
+            
+          });
+        
+        
 });
 
