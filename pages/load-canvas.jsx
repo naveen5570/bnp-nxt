@@ -21,6 +21,7 @@ const Home = () => {
       </div>
       <div className="container-fluid canva-top">
         <div className="row">
+
           <div className="form-group pop_option text1">
             <span className="close">x</span>
             <img src="img/template-i.png" />
@@ -31,7 +32,7 @@ const Home = () => {
             <input type="text" className="add-text form-control" /> <br />
             <button className="add-text-btn btn btn-info">Add Text</button>
             {/*<button class="save-btn btn btn-success">Save</button>*/}
-<<<<<<< HEAD
+
             <div className="col-md-12">
 <label className="form-label">Select Font</label>
 <select className="form-control"  name="font" id="font">
@@ -42,8 +43,7 @@ const Home = () => {
 <option value="Agency FB">Agency FB</option>
 </select>
 </div>
-=======
->>>>>>> 6b2ba52131787109ceb77db43a9a636415ba3e03
+
           </div>
           <div className="form-group pop_option shape">
 <span className="close">x</span>
@@ -143,91 +143,20 @@ const Home = () => {
 <div className="container">
 <div className="row">
 
-<<<<<<< HEAD
+
 {/*<div className="col-md-2"><button className="save-btn btn btn-info save">Save</button></div>*/}
 <div className="col-md-4"><button className="save-btn btn btn-info create">Save Product</button></div>
 {/*<div className="col-md-3"><button className="save-btn btn btn-info restore">Restore</button></div>*/}
-<div className="col-md-4">
-=======
-<div className="col-md-2"><button className="save-btn btn btn-info save">Save</button></div>
-<div className="col-md-2"><button className="save-btn btn btn-info create">Create</button></div>
-<div className="col-md-3"><button className="save-btn btn btn-info restore">Restore</button></div>
-<div className="col-md-2">
->>>>>>> 6b2ba52131787109ceb77db43a9a636415ba3e03
-<input type="button" id="delete" className="save-btn btn btn-danger" value="Delete selection"/>
-</div></div></div>            
-            <div id="sku" className="popup">
-              <input
-                type="text"
-                id="sku1"
-                placeholder="Product SKU"
-                className="form-control"
-              />
-              <br />
-              <button className="save-btn btn btn-success save1">
-                Save Canvas
-              </button>
-            </div>
-            <div id="create_product" className="popup">
-              <input
-                type="text"
-                id="pr_name"
-                placeholder="Product Name"
-                className="form-control"
-              />
-              <br />
-              <input
-                type="text"
-                id="pr_sku"
-                placeholder="Product SKU"
-                className="form-control"
-              />
-              <br/>
-              <input
-                type="text" 
-                pattern="[0-9]"
-                id="pr_price"
-                placeholder="Price"
-                className="form-control" 
-              />
-              <br />
-              <input
-                type="hidden"
-                id="pr_weight"
-                 value="4"
-                className="form-control" disabled
-              />
-              <br/>
-              <input
-                type="hidden"
-                id="pr_type"
-                 value="physical"
-                className="form-control" disabled
-              />
-              
-              
-              <button className="save-btn btn btn-success create1">
-                Create Product  
-              </button>
-            </div>
-            <div id="sku2" className="popup">
-              <input
-                type="text"
-                id="sku11"
-                placeholder="Product SKU"
-                className="form-control"
-              />
-              <br />
-              <button className="save-btn btn btn-success restore1">
-                Restore Canvas
-              </button>
-            </div>
             
           </div>
         </div>
       </div>
       <div className="overlay"></div>
       <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" />
+    
+    
+    </div>
+    </div>
     </>
   )
 }
