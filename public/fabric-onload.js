@@ -230,6 +230,7 @@ $('.create1').click(function(){
           });
         //alert('saved successfully');
         
+<<<<<<< HEAD
         json = canvas.toJSON();
         url1 = "/api/products";
         var string_json = JSON.stringify(json);
@@ -255,6 +256,8 @@ $('.create1').click(function(){
 
 
         
+=======
+>>>>>>> 6b2ba52131787109ceb77db43a9a636415ba3e03
     });
 
 
@@ -414,6 +417,7 @@ const urlParams = new URLSearchParams(queryString);
         
 });
 
+<<<<<<< HEAD
 
 // change font 
 
@@ -423,3 +427,5 @@ $('#font').change(function(){
     canvas.renderAll();	
     });
 
+=======
+>>>>>>> 6b2ba52131787109ceb77db43a9a636415ba3e03

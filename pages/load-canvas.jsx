@@ -31,6 +31,7 @@ const Home = () => {
             <input type="text" className="add-text form-control" /> <br />
             <button className="add-text-btn btn btn-info">Add Text</button>
             {/*<button class="save-btn btn btn-success">Save</button>*/}
+<<<<<<< HEAD
             <div className="col-md-12">
 <label className="form-label">Select Font</label>
 <select className="form-control"  name="font" id="font">
@@ -41,6 +42,8 @@ const Home = () => {
 <option value="Agency FB">Agency FB</option>
 </select>
 </div>
+=======
+>>>>>>> 6b2ba52131787109ceb77db43a9a636415ba3e03
           </div>
           <div className="form-group pop_option shape">
 <span className="close">x</span>
@@ -140,10 +143,17 @@ const Home = () => {
 <div className="container">
 <div className="row">
 
+<<<<<<< HEAD
 {/*<div className="col-md-2"><button className="save-btn btn btn-info save">Save</button></div>*/}
 <div className="col-md-4"><button className="save-btn btn btn-info create">Save Product</button></div>
 {/*<div className="col-md-3"><button className="save-btn btn btn-info restore">Restore</button></div>*/}
 <div className="col-md-4">
+=======
+<div className="col-md-2"><button className="save-btn btn btn-info save">Save</button></div>
+<div className="col-md-2"><button className="save-btn btn btn-info create">Create</button></div>
+<div className="col-md-3"><button className="save-btn btn btn-info restore">Restore</button></div>
+<div className="col-md-2">
+>>>>>>> 6b2ba52131787109ceb77db43a9a636415ba3e03
 <input type="button" id="delete" className="save-btn btn btn-danger" value="Delete selection"/>
 </div></div></div>            
             <div id="sku" className="popup">

@@ -30,7 +30,11 @@ var canvas = new fabric.Canvas('canvas');
 
 document.querySelectorAll('.add-text-btn')[0].addEventListener('click', function(){
 
+<<<<<<< HEAD
     var textToAdd = new fabric.Textbox(document.querySelectorAll('.add-text')[0].value, {
+=======
+    var textToAdd = new fabric.Text(document.querySelectorAll('.add-text')[0].value, {
+>>>>>>> 6b2ba52131787109ceb77db43a9a636415ba3e03
        fontFamily: 'arial',
 		fontSize : '12'
     });
@@ -229,6 +233,7 @@ $('.create1').click(function(){
             
           });
         //alert('saved successfully');
+<<<<<<< HEAD
 
         json = canvas.toJSON();
         url1 = "/api/products";
@@ -249,6 +254,8 @@ $('.create1').click(function(){
             
             
             });
+=======
+>>>>>>> 6b2ba52131787109ceb77db43a9a636415ba3e03
         
     });
 
@@ -402,6 +409,7 @@ $(document).mouseup(function (e) {
     }
 });
 
+<<<<<<< HEAD
 
 
 // change font 
@@ -412,3 +420,5 @@ $('#font').change(function(){
     canvas.renderAll();	
     });
 
+=======
+>>>>>>> 6b2ba52131787109ceb77db43a9a636415ba3e03
